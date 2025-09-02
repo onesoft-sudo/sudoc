@@ -1,11 +1,5 @@
 import docsPageListJson from "@/docs_index.json";
 import indexJson from "@/index.json";
-import {
-    BOT_INVITE_REQUEST_URL,
-    DISCORD_URL,
-    DONATION_URL,
-    SUPPORT_EMAIL_ADDRESS,
-} from "@/config/links";
 import { toTitleCase } from "./utils";
 
 export type OldDocsPage = {

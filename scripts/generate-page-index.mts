@@ -7,10 +7,7 @@ import path from "path";
     const pages = await glob("app/**/page.{tsx,mdx,md}");
     const index = [];
 
-    async function loadDocsIndex(
-        directory = "app/(docs)",
-        href = "/",
-    ) {
+    async function loadDocsIndex(directory = "app/(docs)", href = "/") {
         const data = [];
         const files = readdirSync(directory);
 
@@ -47,9 +44,11 @@ import path from "path";
             }
 
             if (
-                filename !== "page.tsx" &&
-                filename !== "page.md" &&
-                filename !== "page.mdx"
+                (filename !== "page.tsx" &&
+                    filename !== "page.md" &&
+                    filename !== "page.mdx") ||
+                file.endsWith("/(docs)/page.tsx") ||
+                file.endsWith("/(docs)/page.mdx")
             )
                 continue;
 
@@ -86,7 +85,10 @@ import path from "path";
                   ),
               )
             : null;
-        const children = [...(dirdata?.entries ?? []), ...data] as {name: string,data:string}[];
+        const children = [...(dirdata?.entries ?? []), ...data] as {
+            name: string;
+            data: string;
+        }[];
 
         children.sort((a, b) => {
             if (dirdata?.sort_as) {
@@ -120,6 +122,13 @@ import path from "path";
     }
 
     for (const page of pages) {
+        // if (
+        //     page.endsWith("/(docs)/page.tsx") ||
+        //     page.endsWith("/(docs)/page.mdx")
+        // ) {
+        //     continue;
+        // }
+
         const isMDX = page.endsWith(".mdx") || page.endsWith(".md");
 
         index.push(
@@ -139,10 +148,7 @@ import path from "path";
     );
 
     try {
-        await cp(
-            "index.json",
-            ".next/server/index.json",
-        );
+        await cp("index.json", ".next/server/index.json");
     } catch (error) {
         console.error(error);
     }

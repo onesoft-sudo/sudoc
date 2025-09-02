@@ -57,7 +57,7 @@ export default function LastModified() {
 
             <div>
                 <Button
-                    href={`${GITHUB_REPOSITORY}/edit/${encodeURIComponent(
+                    href={`https://github.com/${GITHUB_REPOSITORY}/edit/${encodeURIComponent(
                         GITHUB_REPOSITORY_BRANCH,
                     )}/${editURL ?? ""}`}
                     target="_blank"

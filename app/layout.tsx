@@ -7,16 +7,16 @@ import { PropsWithChildren } from "react";
 import { Inter } from "next/font/google";
 import Providers from "./providers";
 import { BASE_URL } from "@/config/links";
+import { SITE_DEFAULT_TITLE, SITE_TITLE_FORMAT } from "@/config/config";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
     metadataBase: new URL(BASE_URL),
     title: {
-        default: "SudoBot Documentation",
-        template: "%s | SudoBot Documentation",
+        default: SITE_DEFAULT_TITLE,
+        template: SITE_TITLE_FORMAT,
     },
-    description: "A guide to get you started with SudoBot!",
     alternates: {
         canonical: "./",
     },

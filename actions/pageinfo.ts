@@ -22,9 +22,7 @@ export async function getPageInfo(pathname: string) {
           ? "md"
           : "tsx";
 
-    const urlEncodedPath = `docs/app${
-        pathname === "/" ? "" : "/(docs)"
-    }${pathname.trim() + (pathname[pathname.length - 1] !== "/" || pathname === "/" ? "/" : "")}page.${pageExtension}`;
+    const urlEncodedPath = `app/(docs)${pathname.trim() + (pathname[pathname.length - 1] !== "/" ? "/" : "")}page.${pageExtension}`;
 
     const githubURL = pathname
         ? `https://api.github.com/repos/${GITHUB_REPOSITORY}/commits?path=${encodeURIComponent(urlEncodedPath)}&sha=${encodeURIComponent(GITHUB_REPOSITORY_BRANCH)}`

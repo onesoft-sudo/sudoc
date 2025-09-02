@@ -1,3 +1,15 @@
 {
-    "sort_as": ["welcome"]
+    "sort_as": ["root"],
+    "entries": [
+        {
+            "type": "page",
+            "name": "root",
+            "children": [],
+            "href": "/",
+            "data": {
+                "title": "Hello world",
+                "short_name": "Hello world"
+            }
+        }
+    ]
 }

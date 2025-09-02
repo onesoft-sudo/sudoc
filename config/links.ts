@@ -1,7 +1,4 @@
-export const DONATION_URL = "https://www.sudobot.online/donate";
-export const BOT_INVITE_REQUEST_URL = "https://forms.gle/943kW9q25MpKEwW26";
-export const SUPPORT_EMAIL_ADDRESS = "rakinar2@onesoftnet.eu.org";
-export const DISCORD_URL = "https://discord.gg/892GWhTzgs";
+import { GITHUB_REPOSITORY } from "./config";
 
 /**
  * The base URL of this website.
@@ -23,23 +20,11 @@ export const navbarPages: NavbarPageEntry[] = [
         url: "/",
     },
     {
-        name: "FAQ",
-        url: "/faq",
+        name: "GitHub",
+        url: `https://github.com/${GITHUB_REPOSITORY}`
     },
     {
-        name: "Invite",
-        url: BOT_INVITE_REQUEST_URL,
-    },
-    {
-        name: "Support",
-        url: `mailto:${SUPPORT_EMAIL_ADDRESS}`,
-    },
-    {
-        name: "Donate",
-        url: DONATION_URL,
-    },
-    {
-        name: "Discord",
-        url: DISCORD_URL,
-    },
+        name: "About",
+        url: '#'
+    }
 ];

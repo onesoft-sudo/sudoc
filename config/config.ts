@@ -19,6 +19,16 @@ export const BLOG_BRAND_NAME: string = BRAND_NAME;
 export const BRAND_LOGO_IMAGE_FILE_NAME: string = "logo.png";
 
 /**
+ * Site default title.
+ */
+export const SITE_DEFAULT_TITLE = "Documentation of this app";
+
+/**
+ * Site title format string.
+ */
+export const SITE_TITLE_FORMAT = "%s | Documentation of this app";
+
+/**
  * The GitHub repository where this website's code is located, in
  * the form of 'username/repository'.
  */
