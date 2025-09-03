@@ -8,15 +8,15 @@ type ImageWithSkeletonProps = ComponentProps<typeof Image>;
 
 const ImageWithSkeleton: FC<ImageWithSkeletonProps> = ({ ...imageProps }) => {
     const [isLoaded, setIsLoaded] = useState(false);
-    const { onLoad, ...finalImageProps } = imageProps;
 
     return (
         <div className="relative">
             <Image
+                {...imageProps}
                 onLoad={() => {
                     setIsLoaded(true);
                 }}
-                {...finalImageProps}
+                alt={imageProps.alt}
             />
             {!isLoaded && (
                 <div

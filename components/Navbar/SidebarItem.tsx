@@ -41,7 +41,7 @@ export default function SidebarItem({
 
     useEffect(() => {
         setExpanded(isDefaultExpanded(expanded));
-    }, [pathname])
+    }, [pathname]) // eslint-disable-line react-hooks/exhaustive-deps
 
     const toggle = (e: SyntheticEvent) => {
         e.preventDefault();

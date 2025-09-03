@@ -7,7 +7,7 @@ import ImageWithSkeleton from "./components/MDX/ImageWithSkeleton";
 export function useMDXComponents(components: MDXComponents): MDXComponents {
     return {
         ...components,
-        Image: (props: ComponentProps<typeof Image>) => <Image {...props} />,
+        Image: (props: ComponentProps<typeof Image>) => <Image {...props} />, // eslint-disable-line jsx-a11y/alt-text
         ImageWithSkeleton: (
             props: ComponentProps<typeof ImageWithSkeleton>,
         ) => <ImageWithSkeleton {...props} />,

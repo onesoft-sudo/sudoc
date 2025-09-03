@@ -7,11 +7,9 @@ import Link from "next/link";
 import { FC } from "react";
 import { MdArrowBack, MdArrowForward } from "react-icons/md";
 
-interface NavigatorProps {}
-
 const flatRoutes = flatten().filter(page => page.type !== "directory");
 
-const Navigator: FC<NavigatorProps> = () => {
+const Navigator: FC = () => {
     const pathname = useActualPathname();
 
     const currentPage = flatRoutes.findIndex(page => {

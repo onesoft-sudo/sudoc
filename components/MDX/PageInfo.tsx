@@ -36,6 +36,7 @@ export default function LastModified() {
                     <>
                         {avatar ? (
                             <Tooltip content={username ?? "Unknown"}>
+                                {/* eslint-disable-next-line @next/next/no-img-element, jsx-a11y/alt-text */}
                                 <img
                                     src={avatar}
                                     className="w-[30px] h-[30px] rounded-full [border:1px_solid_#007bff]"

@@ -23,9 +23,9 @@ const SearchResults: FC<SearchResultsProps> = ({ query, onClose }) => {
         try {
             const response = await fetch(
                 `/search?q=${encodeURIComponent(query)}`,
-                // {
-                //     signal: controller.signal,
-                // },
+                {
+                    signal: controller.signal,
+                },
             );
             const data = await response.json();
 
@@ -54,7 +54,7 @@ const SearchResults: FC<SearchResultsProps> = ({ query, onClose }) => {
                 controller.abort();
             } catch {}
         };
-    }, [query]);
+    }, [query]); // eslint-disable-line react-hooks/exhaustive-deps
 
     return (
         <>

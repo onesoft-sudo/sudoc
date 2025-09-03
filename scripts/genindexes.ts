@@ -70,7 +70,7 @@ async function scanDirectory(
             directory === rootDirectory
                 ? "/"
                 : directory.replace(rootDirectory, "");
-        let [frontmatter, contents] = filePath.endsWith(".tsx")
+        const [frontmatter, contents] = filePath.endsWith(".tsx")
             ? [null, await readFile(filePath, "utf8")]
             : await extractFrontmatter(filePath);
 
@@ -113,7 +113,7 @@ async function scanDirectory(
                     : "",
             });
 
-            sitemap.push({
+            sitemapEntryArray.push({
                 href: mainResult.href,
                 lastmod: new Date().toISOString(),
             });
@@ -142,7 +142,7 @@ async function scanDirectory(
                 continue;
             }
 
-            let [entryFrontmatter, entryContents] = pageEntry.file
+            const [entryFrontmatter, entryContents] = pageEntry.file
                 ? !pageEntry.file.endsWith(".mdx") &&
                   !pageEntry.file.endsWith(".md")
                     ? [
@@ -195,7 +195,7 @@ async function scanDirectory(
                         : "",
                 });
 
-                sitemap.push({
+                sitemapEntryArray.push({
                     href: href,
                     lastmod: new Date().toISOString(),
                 });
@@ -295,32 +295,40 @@ type FrontmatterType = {
     short_name?: string;
 };
 
-const index: IndexEntry[] = [];
-const sitemap: SitemapEntry[] = [];
-const tree = await scanDirectory(undefined, index, sitemap);
+if (process.argv.includes("--pre")) {
+    const index: IndexEntry[] = [];
+    const sitemap: SitemapEntry[] = [];
+    const tree = await scanDirectory(undefined, index, sitemap);
 
-await writeFile("index.json", JSON.stringify(index, null, 4));
-await cp("index.json", ".next/server/index.json");
-await writeFile("tree.json", JSON.stringify(tree, null, 4));
+    await writeFile("index.json", JSON.stringify(index, null, 4));
+    await writeFile("tree.json", JSON.stringify(tree, null, 4));
 
-let sitemapXML = `<?xml version="1.0" encoding="UTF-8"?>
+    let sitemapXML = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 `;
 
-for (const entry of sitemap.toReversed()) {
-    sitemapXML += `
+    for (const entry of sitemap.toReversed()) {
+        sitemapXML += `
         <url>
             <loc>https://${BASE_URL}${entry.href}</loc>
             <lastmod>${entry.lastmod}</lastmod>
         </url>
     `;
-}
+    }
 
-sitemapXML += `
+    sitemapXML += `
 </urlset>
 `;
 
-await writeFile("sitemap.xml", sitemapXML);
-await writeFile("sitemap.json", JSON.stringify(sitemap.toReversed(), null, 2));
+    await writeFile("sitemap.xml", sitemapXML);
+    await writeFile(
+        "sitemap.json",
+        JSON.stringify(sitemap.toReversed(), null, 2),
+    );
+}
+
+if (process.argv.includes("--post")) {
+    await cp("index.json", ".next/server/index.json");
+}

@@ -4,6 +4,9 @@
 
 dir="$(dirname "$0")"
 
+set -xe
+
 node "$dir/init.ts"
-node "$dir/genindexes.ts"
+node "$dir/genindexes.ts" --pre
 next build
+node "$dir/genindexes.ts" --post

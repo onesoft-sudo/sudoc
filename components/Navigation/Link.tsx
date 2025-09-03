@@ -55,11 +55,11 @@ export default function Link({
             {...props}
             onClick={event => {
                 event.stopPropagation();
-                onClick?.(event as MouseEvent<any, any>);
+                onClick?.(event as MouseEvent<HTMLAnchorElement>);
                 onNavigate();
             }}
             onKeyUp={event => {
-                onKeyUp?.(event as KeyboardEvent<any>);
+                onKeyUp?.(event as KeyboardEvent<HTMLAnchorElement>);
 
                 if (event.key === "Enter") {
                     onNavigate();

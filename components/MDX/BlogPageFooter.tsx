@@ -1,3 +1,4 @@
+import { BLOG_LICENSE_NAME } from "@/config/config";
 import { Tooltip } from "@mui/material";
 import { formatDistanceToNowStrict } from "date-fns";
 import { type FC } from "react";
@@ -39,7 +40,7 @@ const BlogPageFooter: FC<BlogPageFooterProps> = ({
                         target="_blank"
                         className="underline text-blue-500 hover:text-blue-600"
                     >
-                        CC BY-NC-ND 4.0
+                        {BLOG_LICENSE_NAME}
                     </a>{" "}
                     license. Copyright © {postedAt.getFullYear()} OSN
                     Developers.

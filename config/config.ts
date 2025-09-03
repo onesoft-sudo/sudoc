@@ -39,3 +39,8 @@ export const GITHUB_REPOSITORY = "onesoft-sudo/sudobot-docs";
  * being deployed.
  */
 export const GITHUB_REPOSITORY_BRANCH = "main";
+
+/**
+ * License used for the blog posts.
+ */
+export const BLOG_LICENSE_NAME: string = "CC BY-NC-ND 4.0";
