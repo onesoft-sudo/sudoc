@@ -39,14 +39,15 @@ export default function Link({
         if (
             !stringHref.startsWith("https://") &&
             !stringHref.startsWith("http://") &&
-            (pathname !==
+            pathname !==
                 stringHref
                     .substring(0, pos === -1 ? undefined : pos)
                     .replace(/\/+/g, "/")
-                    .replace(/\/$/g, "") ||
-                !(pathname === "/" &&
-                    stringHref.substring(0, pos === -1 ? undefined : pos) ===
-                        "/"))
+                    .replace(/\/$/g, "") &&
+            !(
+                pathname === "/" &&
+                stringHref.substring(0, pos === -1 ? undefined : pos) === "/"
+            )
         ) {
             setIsChanging(true);
         }
