@@ -323,3 +323,4 @@ sitemapXML += `
 `;
 
 await writeFile("sitemap.xml", sitemapXML);
+await writeFile("sitemap.json", JSON.stringify(sitemap.toReversed(), null, 2));

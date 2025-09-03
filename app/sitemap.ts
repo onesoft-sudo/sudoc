@@ -4,10 +4,8 @@ import { MetadataRoute } from "next";
 
 export default function Sitemap(): MetadataRoute.Sitemap {
     return urls
-        .filter(url => url.loc !== "/blog" && !url.loc.startsWith("/blog/"))
         .map(url => ({
-            url: absoluteURL(url.loc),
+            url: absoluteURL(url.href),
             lastModified: url.lastmod,
-            priority: url.priority === 1 ? 1 : undefined,
         }));
 }
