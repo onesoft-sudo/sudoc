@@ -4,7 +4,7 @@ import styles from "@/styles/SidebarItem.module.css";
 import { Page } from "@/types/Tree";
 import { flatten, resolveDocsURL } from "@/utils/pages";
 import { Button } from "@mui/material";
-import { SyntheticEvent, useEffect, useMemo, useState } from "react";
+import { SyntheticEvent, useEffect, useMemo, useState, JSX } from "react";
 import { MdExpandMore } from "react-icons/md";
 
 type SidebarItemProps = {

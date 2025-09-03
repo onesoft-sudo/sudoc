@@ -3,7 +3,7 @@
 import { useRouterContext } from "@/contexts/RouterContext";
 import NextLink from "next/link";
 import { usePathname } from "next/navigation";
-import { ComponentProps, FC, KeyboardEvent, MouseEvent } from "react";
+import { ComponentProps, FC, KeyboardEvent, MouseEvent, JSX } from "react";
 
 type LinkProps = Omit<ComponentProps<typeof NextLink>, "as"> & {
     nextLink?: boolean;

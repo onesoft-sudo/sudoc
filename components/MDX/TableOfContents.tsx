@@ -1,7 +1,7 @@
 "use client";
 
 import useActualPathname from "@/hooks/useActualPathname";
-import { FC, useEffect, useRef, useState } from "react";
+import { FC, useEffect, useRef, useState, JSX } from "react";
 
 const selector = ":is(h1, h2, h3, h4, h5, h6)[id]";
 
