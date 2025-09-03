@@ -2,6 +2,7 @@
 
 import { getPageInfo } from "@/actions/pageinfo";
 import { GITHUB_REPOSITORY, GITHUB_REPOSITORY_BRANCH } from "@/config/config";
+import { useRouterContext } from "@/contexts/RouterContext";
 import useActualPathname from "@/hooks/useActualPathname";
 import { Tooltip } from "@heroui/react";
 import { Button } from "@mui/material";
@@ -15,6 +16,7 @@ export default function LastModified() {
     const [editURL, setEditURL] = useState<string | null>(null);
     const [username, setUsername] = useState<string | null>(null);
     const pathname = useActualPathname();
+    const { isChanging } = useRouterContext();
 
     useEffect(() => {
         getPageInfo(pathname)
@@ -61,7 +63,7 @@ export default function LastModified() {
                     href={editURL ? `https://github.com/${GITHUB_REPOSITORY}/edit/${encodeURIComponent(
                         GITHUB_REPOSITORY_BRANCH,
                     )}/${editURL ?? ""}` : '#'}
-                    disabled={!editURL}
+                    disabled={!editURL || isChanging}
                     target="_blank"
                     rel="noreferrer"
                     startIcon={<MdEdit size={16} />}
