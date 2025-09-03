@@ -11,24 +11,24 @@ export async function getPageInfo(pathname: string) {
 
     if (Object.keys(map).length === 0) {
         for (const entry of getIndex()) {
-            map.set(entry.href, entry)
+            map.set(entry.href, entry);
         }
     }
 
     const trimmedPathname = pathname.replace(/\/$/, "");
-    const path = (map.get(trimmedPathname) ?? map.get(trimmedPathname + "/"))?.href;
+    const path = (map.get(trimmedPathname) ?? map.get(trimmedPathname + "/"))?.fs_path;
 
     console.log('path', path);
 
-    const pageExtension = path?.endsWith(".mdx")
+    const pageExtension = !path ? null : path?.endsWith(".mdx")
         ? "mdx"
         : path?.endsWith(".md")
           ? "md"
           : "tsx";
 
-    const urlEncodedPath = `app/(docs)${pathname.trim() + (pathname[pathname.length - 1] !== "/" ? "/" : "")}page.${pageExtension}`;
+    const urlEncodedPath = !pageExtension ? null : `app/(docs)${pathname.trim() + (pathname[pathname.length - 1] !== "/" ? "/" : "")}page.${pageExtension}`;
 
-    const githubURL = pathname
+    const githubURL = pathname && urlEncodedPath
         ? `https://api.github.com/repos/${GITHUB_REPOSITORY}/commits?path=${encodeURIComponent(urlEncodedPath)}&sha=${encodeURIComponent(GITHUB_REPOSITORY_BRANCH)}`
         : null;
 

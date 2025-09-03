@@ -3,4 +3,5 @@ export type IndexEntry = {
     frontmatter?: string;
     href: string;
     contents: string;
+    fs_path?: string;
 };

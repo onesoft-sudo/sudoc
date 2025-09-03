@@ -111,6 +111,7 @@ async function scanDirectory(
                 frontmatter: frontmatter
                     ? JSON.stringify(frontmatter, null, 2)
                     : "",
+                fs_path: filePath,
             });
 
             sitemapEntryArray.push({
@@ -193,6 +194,9 @@ async function scanDirectory(
                     frontmatter: entryFrontmatter
                         ? JSON.stringify(entryFrontmatter, null, 2)
                         : "",
+                    fs_path: pageEntry.file
+                        ? path.join(directory, pageEntry.file)
+                        : undefined,
                 });
 
                 sitemapEntryArray.push({

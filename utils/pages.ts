@@ -46,6 +46,7 @@ export function getIndex(lowercased = false) {
             title: e.title.toLowerCase(),
             frontmatter: e.frontmatter?.toLowerCase(),
             href: e.href.toLowerCase(),
+            fs_path: e.fs_path,
         }));
     }
 

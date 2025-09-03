@@ -58,9 +58,10 @@ export default function LastModified() {
 
             <div>
                 <Button
-                    href={`https://github.com/${GITHUB_REPOSITORY}/edit/${encodeURIComponent(
+                    href={editURL ? `https://github.com/${GITHUB_REPOSITORY}/edit/${encodeURIComponent(
                         GITHUB_REPOSITORY_BRANCH,
-                    )}/${editURL ?? ""}`}
+                    )}/${editURL ?? ""}` : '#'}
+                    disabled={!editURL}
                     target="_blank"
                     rel="noreferrer"
                     startIcon={<MdEdit size={16} />}
