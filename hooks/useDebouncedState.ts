@@ -3,7 +3,7 @@ import { useRef, useState } from "react";
 export default function useDebouncedState<T>(data?: T, delay = 1500) {
     const [state, setState] = useState<T>(data as T);
     const [queued, setQueued] = useState(false);
-    const timeoutRef = useRef<NodeJS.Timeout | undefined>();
+    const timeoutRef = useRef<NodeJS.Timeout | undefined>(null);
 
     const setDebouncedState = (newData: T) => {
         if (!queued) {
