@@ -1,4 +1,4 @@
-import { GITHUB_REPOSITORY } from "./config";
+import { GITHUB_REPOSITORY } from "./config.ts";
 
 /**
  * The base URL of this website.
@@ -14,7 +14,7 @@ type NavbarPageEntry = {
 /**
  * List of pages shown in the Navbar (at the top).
  */
-export const navbarPages: NavbarPageEntry[] = [
+export const NAVBAR_PAGES: NavbarPageEntry[] = [
     {
         name: "Home",
         url: "/",
@@ -28,3 +28,8 @@ export const navbarPages: NavbarPageEntry[] = [
         url: '#'
     }
 ];
+
+/**
+ * Whether to list the root page in the sidebar.
+ */
+export const LIST_ROOT_PAGE_IN_SIDEBAR: boolean = true;

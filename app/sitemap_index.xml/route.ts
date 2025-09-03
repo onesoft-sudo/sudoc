@@ -2,7 +2,7 @@ import { absoluteURL } from "@/utils/utils";
 import { NextResponse } from "next/server";
 
 export async function GET() {
-    const sitemaps = ["/sitemap.xml", "/blog/sitemap.xml"];
+    const sitemaps = ["/sitemap.xml"];
 
     return new NextResponse(
         `<?xml version="1.0" encoding="UTF-8"?>\n

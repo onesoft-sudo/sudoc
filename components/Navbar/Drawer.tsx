@@ -5,8 +5,8 @@ import { useState } from "react";
 import { HiArrowTopRightOnSquare } from "react-icons/hi2";
 import { MdClose, MdNavigateBefore } from "react-icons/md";
 import DocsLink from "./DocsLink";
-import DocsLinkList from "./Sidebar";
-import { navbarPages } from "@/config/links";
+import Sidebar from "./Sidebar";
+import { NAVBAR_PAGES } from "@/config/links";
 
 export default function Drawer({
     onClose,
@@ -59,7 +59,7 @@ export default function Drawer({
                             width: "90%",
                         }}
                     >
-                        {navbarPages.map(link => (
+                        {NAVBAR_PAGES.map(link => (
                             <li
                                 key={`${link.url}_${link.name}`}
                                 className={styles.listItem}
@@ -90,7 +90,7 @@ export default function Drawer({
                     </ul>
                 </div>
 
-                <DocsLinkList expanded={docsExpanded} onNavigate={onClose} />
+                <Sidebar expanded={docsExpanded} onNavigate={onClose} />
             </aside>
             <div
                 className={`${styles.overlay} ${

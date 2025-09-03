@@ -44,7 +44,7 @@ const Navigator: FC<NavigatorProps> = () => {
                     <div className={styles.text}>
                         <small>Back</small>
                         <span>
-                            {prevPage.data?.short_name ?? prevPage.data?.title}
+                            {prevPage.data?.short_name ?? prevPage.data?.title ?? prevPage.title}
                         </span>
                     </div>
                 </Link>
@@ -57,7 +57,7 @@ const Navigator: FC<NavigatorProps> = () => {
                     <div className={styles.text}>
                         <small>Next</small>
                         <span>
-                            {nextPage.data?.short_name ?? nextPage.data?.title}
+                            {nextPage.data?.short_name ?? nextPage.data?.title ?? nextPage.title}
                         </span>
                     </div>
                     <div className={styles.iconWrapper}>

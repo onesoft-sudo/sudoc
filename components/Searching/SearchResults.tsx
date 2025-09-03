@@ -9,10 +9,9 @@ type SearchResultsProps = {
 
 type SearchResultItem = {
     title?: string;
-    description?: string;
     data: string;
-    match: "title" | "description" | "data";
-    url: string;
+    match: "title" | "contents" | "frontmatter" | "href";
+    href: string;
 };
 
 const SearchResults: FC<SearchResultsProps> = ({ query, onClose }) => {
@@ -20,28 +19,41 @@ const SearchResults: FC<SearchResultsProps> = ({ query, onClose }) => {
     const [isLoading, setIsLoading] = useState(false);
     const [isNotFound, setIsNotFound] = useState(false);
 
+    const performSearch = async (controller: AbortController) => {
+        try {
+            const response = await fetch(
+                `/search?q=${encodeURIComponent(query)}`,
+                // {
+                //     signal: controller.signal,
+                // },
+            );
+            const data = await response.json();
+
+            setIsNotFound(false);
+            setIsLoading(false);
+            setResults(data.results);
+            setIsNotFound(data.results.length === 0);
+
+            console.log(data);
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
     useEffect(() => {
         if (!query?.trim()) {
             return;
         }
 
         const controller = new AbortController();
-
         setIsLoading(true);
+        performSearch(controller);
 
-        fetch(`/search?q=${encodeURIComponent(query)}`, {
-            signal: controller.signal,
-        })
-            .then(response => response.json())
-            .then(data => {
-                setIsNotFound(false);
-                setIsLoading(false);
-                setResults(data.results);
-                setIsNotFound(data.results.length === 0);
-            })
-            .catch(console.error);
-
-        return () => controller.abort();
+        return () => {
+            try {
+                controller.abort();
+            } catch {}
+        };
     }, [query]);
 
     return (
@@ -70,8 +82,8 @@ const SearchResults: FC<SearchResultsProps> = ({ query, onClose }) => {
                     !isNotFound &&
                     results.map(result => (
                         <Link
-                            key={result.url}
-                            href={result.url}
+                            key={result.href}
+                            href={result.href}
                             onClick={onClose}
                             className="p-2 hover:bg-neutral-800 rounded-lg cursor-pointer block"
                         >

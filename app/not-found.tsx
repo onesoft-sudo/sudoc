@@ -11,11 +11,11 @@ export const metadata = {
 export default async function NotFound() {
     return (
         <main className={styles.main}>
-            <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-red-500 flex justify-center items-center gap-3">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl text-red-500/90 flex justify-center items-center gap-3 mt-5 lg:mt-10">
                 <MdError className="scale-[1.1]" />
                 <span>404 Not Found</span>
             </h1>
-            <h3 className="text-xl lg:text-3xl py-2">Page not found</h3>
+            <h3 className="text-xl lg:text-2xl py-3">Page not found</h3>
 
             <p className="text-[#aaa] mt-5">
                 The requested URL{" "}

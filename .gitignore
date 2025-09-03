@@ -40,3 +40,8 @@ index.json
 sitemap.xml
 sitemap.json
 docs_index.json
+tree.json
+
+local_types.d.ts
+
+*.bak

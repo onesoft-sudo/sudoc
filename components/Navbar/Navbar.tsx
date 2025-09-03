@@ -5,7 +5,7 @@ import logo from "../../images/logo.png";
 import Search from "../Searching/Search";
 import NavbarClientSide from "./NavbarClientSide";
 import { NavbarTitle } from "./NavbarTitle";
-import {  navbarPages } from "@/config/links";
+import {  NAVBAR_PAGES } from "@/config/links";
 import { BRAND_NAME } from "@/config/config";
 
 export default function Navbar() {
@@ -18,7 +18,7 @@ export default function Navbar() {
             </a>
 
             <ul className={`${styles.ul} desktop`}>
-                {navbarPages.map(link => {
+                {NAVBAR_PAGES.map(link => {
                     const LinkComponent = link.url.startsWith("/") ? Link : "a";
                     return (
                         <li key={`${link.url}_${link.name}`}>

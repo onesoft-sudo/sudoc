@@ -1,3 +1,4 @@
+import { IndexEntry } from "@/types/IndexEntry";
 import { getIndex } from "@/utils/pages";
 import { NextRequest, NextResponse } from "next/server";
 
@@ -20,7 +21,7 @@ export async function GET(request: NextRequest) {
     const index = getIndex();
     const lowercasedIndex = getIndex(true);
 
-    const results = [];
+    const results: (IndexEntry & { match: keyof IndexEntry })[] = [];
 
     if (lowercasedIndex) {
         for (const i in lowercasedIndex) {
@@ -30,17 +31,26 @@ export async function GET(request: NextRequest) {
 
             const titleIncludes = lowercasedIndex[i].title?.includes(query);
             const descriptionIncludes =
-                lowercasedIndex[i].description?.includes(query);
-            const dataIncludes = lowercasedIndex[i].data.includes(query);
+                lowercasedIndex[i].contents?.includes(query);
+            const frontmatterIncludes =
+                lowercasedIndex[i].frontmatter?.includes(query);
+            const hrefIncludes = lowercasedIndex[i].href?.includes(query);
 
-            if (titleIncludes || descriptionIncludes || dataIncludes) {
+            if (
+                titleIncludes ||
+                descriptionIncludes ||
+                frontmatterIncludes ||
+                hrefIncludes
+            ) {
                 results.push({
                     ...index?.[i],
                     match: titleIncludes
                         ? ("title" as const)
                         : descriptionIncludes
-                          ? ("description" as const)
-                          : ("data" as const),
+                        ? ("contents" as const)
+                        : frontmatterIncludes
+                        ? ("frontmatter" as const)
+                        : ("href" as const),
                 });
             }
         }

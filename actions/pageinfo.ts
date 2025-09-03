@@ -1,21 +1,25 @@
 "use server";
 
 import { GITHUB_REPOSITORY, GITHUB_REPOSITORY_BRANCH } from "@/config/config";
-import index from "@/index.json";
+import { IndexEntry } from "@/types/IndexEntry";
+import { getIndex } from "@/utils/pages";
 
-const map = {} as Record<string, any>;
+const map = new Map<string, IndexEntry>();
 
 export async function getPageInfo(pathname: string) {
     "use server";
 
     if (Object.keys(map).length === 0) {
-        for (const page of index) {
-            map[page.url] = page;
+        for (const entry of getIndex()) {
+            map.set(entry.href, entry)
         }
     }
 
     const trimmedPathname = pathname.replace(/\/$/, "");
-    const path = (map[trimmedPathname] ?? map[trimmedPathname + "/"])?.path;
+    const path = (map.get(trimmedPathname) ?? map.get(trimmedPathname + "/"))?.href;
+
+    console.log('path', path);
+
     const pageExtension = path?.endsWith(".mdx")
         ? "mdx"
         : path?.endsWith(".md")

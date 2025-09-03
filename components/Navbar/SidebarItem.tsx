@@ -1,14 +1,15 @@
 import Link from "@/components/Navigation/Link";
 import useActualPathname from "@/hooks/useActualPathname";
 import styles from "@/styles/SidebarItem.module.css";
-import { DocsPage, flatten, resolveDocsURL } from "@/utils/pages";
+import { Page } from "@/types/Tree";
+import { flatten, resolveDocsURL } from "@/utils/pages";
 import { Button } from "@mui/material";
-import { SyntheticEvent, useMemo, useState } from "react";
+import { SyntheticEvent, useEffect, useMemo, useState } from "react";
 import { MdExpandMore } from "react-icons/md";
 
 type SidebarItemProps = {
     as: keyof JSX.IntrinsicElements;
-    item: DocsPage;
+    item: Page;
     onNavigate?: () => void;
 };
 
@@ -19,8 +20,8 @@ export default function SidebarItem({
 }: SidebarItemProps) {
     const pathname = useActualPathname();
     const flattenPages = useMemo(() => flatten([item]), [item]);
-    const [expanded, setExpanded] = useState(false);
-    const isFinalExpanded = useMemo(() => {
+
+    const isDefaultExpanded = (expanded: boolean = false): boolean => {
         return (
             expanded ||
             flattenPages?.some(page => {
@@ -34,19 +35,26 @@ export default function SidebarItem({
                 );
             })
         );
-    }, [flattenPages, pathname, expanded]);
+    }
+
+    const [expanded, setExpanded] = useState(isDefaultExpanded);
+
+    useEffect(() => {
+        setExpanded(isDefaultExpanded(expanded));
+    }, [pathname])
 
     const toggle = (e: SyntheticEvent) => {
         e.preventDefault();
         e.stopPropagation();
         setExpanded(s => !s);
     };
+
     const Root = as;
     const url = item.type === "page" ? `${item.href}` : undefined;
     const link = url ? resolveDocsURL(url) : "#";
     const LinkComponent = url ? Link : "a";
     const IconWrapperComponent = url === undefined ? "span" : Button;
-    const name = item.data?.short_name ?? item.data?.title;
+    const name = item.data?.short_name ?? item.data?.title ?? item.title;
 
     return (
         <Root
@@ -77,7 +85,7 @@ export default function SidebarItem({
                         <MdExpandMore
                             size={20}
                             className={`${
-                                isFinalExpanded ? "rotate-180" : ""
+                                expanded ? "rotate-180" : ""
                             } transition-[0.2s]`}
                         />
                     </IconWrapperComponent>
@@ -88,7 +96,7 @@ export default function SidebarItem({
                 <div
                     className="ml-[13px] pl-[10px] [border-left:1px_solid_#444]"
                     style={{
-                        maxHeight: isFinalExpanded
+                        maxHeight: expanded
                             ? `${
                                   flattenPages.length *
                                   (50 +

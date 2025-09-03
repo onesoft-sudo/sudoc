@@ -2,7 +2,7 @@
 
 import useIsDesktop from "@/hooks/useIsDesktop";
 import styles from "@/styles/Sidebar.module.css";
-import { getAllDocsPages } from "@/utils/pages";
+import { getPageTree } from "@/utils/pages";
 import SidebarItem from "./SidebarItem";
 
 type SidebarProps = {
@@ -50,7 +50,7 @@ export default function Sidebar({
                 } md:w-[10vw] lg:w-[15vw] xl:w-[20vw]`}
             >
                 <ul className="list-none m-3">
-                    {getAllDocsPages().children.map(item => (
+                    {getPageTree().children.map(item => (
                         <SidebarItem
                             key={`${item.name}_${item.href}`}
                             as="li"

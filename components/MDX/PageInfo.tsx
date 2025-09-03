@@ -29,30 +29,30 @@ export default function LastModified() {
             .catch(console.error);
     }, [pathname]);
 
-    if (!date) {
-        return <></>;
-    }
-
     return (
         <div className="flex flex-col lg:flex-row gap-5 lg:gap-0 justify-between items-center">
             <div className="flex items-center gap-3">
-                {avatar ? (
-                    <Tooltip content={username ?? "Unknown"}>
-                        <img
-                            src={avatar}
-                            className="w-[30px] h-[30px] rounded-full [border:1px_solid_#007bff]"
-                        />
-                    </Tooltip>
-                ) : (
-                    <div className="w-[30px] h-[30px] rounded-full [border:1px_solid_#007bff] bg-[rgba(0,123,255,0.3)]"></div>
-                )}
+                {date && username && (
+                    <>
+                        {avatar ? (
+                            <Tooltip content={username ?? "Unknown"}>
+                                <img
+                                    src={avatar}
+                                    className="w-[30px] h-[30px] rounded-full [border:1px_solid_#007bff]"
+                                />
+                            </Tooltip>
+                        ) : (
+                            <div className="w-[30px] h-[30px] rounded-full [border:1px_solid_#007bff] bg-[rgba(0,123,255,0.3)]"></div>
+                        )}
 
-                <span className="text-[#999]">
-                    Last modified{" "}
-                    {formatDistanceToNowStrict(date, {
-                        addSuffix: true,
-                    })}
-                </span>
+                        <span className="text-[#999]">
+                            Last modified{" "}
+                            {formatDistanceToNowStrict(date, {
+                                addSuffix: true,
+                            })}
+                        </span>
+                    </>
+                )}
             </div>
 
             <div>
