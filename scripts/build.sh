@@ -4,6 +4,6 @@
 
 dir="$(dirname "$0")"
 
-node "$dir/generate-sitemap.mts"
-node "$dir/generate-page-index.mts"
+node "$dir/init.ts"
+node "$dir/genindexes.ts"
 next build
