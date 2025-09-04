@@ -1,7 +1,9 @@
 import type { DirectoryMetadataType } from "@/schemas/IndexSchema";
 
 const metadata: DirectoryMetadataType = {
-    // sortOrder: ['idk']
+    thisPage: {
+        title: "Get started",
+    }
 };
 
 export default metadata;

@@ -48,29 +48,26 @@ async function scanDirectory(
         }
     }
 
-    for (const file of files) {
-        const filePath = path.join(directory, file);
-        const statResult = await lstat(filePath);
-
-        if (statResult.isDirectory()) {
-            const childResults = await scanDirectory(
-                filePath,
-                indexArray,
-                sitemapEntryArray,
-            );
-            mainResult.children.push(...childResults);
-            continue;
-        }
-
-        if (!/^page\.(tsx|mdx|md)$/.test(file)) {
-            continue;
-        }
-
+    self: {
+        const mdFilePath = path.join(directory, "page.md");
+        const mdxFilePath = path.join(directory, "page.mdx");
+        const tsxFilePath = path.join(directory, "page.tsx");
+        const filePath = directoryMetadataParsed?.thisPage?.file
+            ? path.join(directory, directoryMetadataParsed?.thisPage.file)
+            : existsSync(mdxFilePath)
+            ? mdxFilePath
+            : existsSync(mdFilePath)
+            ? mdFilePath
+            : existsSync(tsxFilePath)
+            ? tsxFilePath
+            : null;
         const uri =
             directory === rootDirectory
                 ? "/"
                 : directory.replace(rootDirectory, "");
-        const [frontmatter, contents] = filePath.endsWith(".tsx")
+        const [frontmatter, contents] = !filePath
+            ? [null, null]
+            : filePath.endsWith(".tsx")
             ? [null, await readFile(filePath, "utf8")]
             : await extractFrontmatter(filePath);
 
@@ -78,7 +75,7 @@ async function scanDirectory(
 
         if (!frontmatter && !directoryMetadataParsed) {
             console.error("%s: Not enough data to index", filePath);
-            continue;
+            break self;
         }
 
         mainResult.title =
@@ -97,7 +94,7 @@ async function scanDirectory(
         mainResult.name =
             mainResult.href === "/" ? "[root]" : path.basename(mainResult.href);
         mainResult.data = frontmatter || undefined;
-        mainResult.type = "page";
+        mainResult.type = filePath ? "page" : "directory";
 
         if (!directoryMetadataParsed?.hideThisDirectory) {
             results.push(mainResult);
@@ -105,13 +102,13 @@ async function scanDirectory(
 
         if (!directoryMetadataParsed?.hideThisDirectoryInSearches) {
             indexArray.push({
-                contents,
+                contents: contents ?? "",
                 href: mainResult.href,
                 title: mainResult.title,
                 frontmatter: frontmatter
                     ? JSON.stringify(frontmatter, null, 2)
                     : "",
-                fs_path: filePath,
+                fs_path: filePath ?? "",
             });
 
             sitemapEntryArray.push({
@@ -216,7 +213,21 @@ async function scanDirectory(
                 i,
             );
 
-            continue;
+            break self;
+        }
+    }
+
+    for (const file of files) {
+        const filePath = path.join(directory, file);
+        const statResult = await lstat(filePath);
+
+        if (statResult.isDirectory()) {
+            const childResults = await scanDirectory(
+                filePath,
+                indexArray,
+                sitemapEntryArray,
+            );
+            mainResult.children.push(...childResults);
         }
     }
 

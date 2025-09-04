@@ -106,7 +106,7 @@ export default function SidebarItem({
                                                   p =>
                                                       (
                                                           p.data?.short_name ??
-                                                          p.name
+                                                          p.title
                                                       ).length,
                                               )
                                               .sort()[0] - 10,
