@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "node scripts/genindexes.ts --pre && next build && node scripts/genindexes.ts --post",
     "start": "next start",
     "lint": "eslint"
   },

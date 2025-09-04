@@ -4,5 +4,15 @@
     "jsxSingleQuote": false,
     "semi": true,
     "trailingComma": "all",
-    "arrowParens": "avoid"
+    "arrowParens": "avoid",
+    "useTabs": true,
+    "overrides": [
+        {
+            "files": ["*.yml", "*.yaml"],
+            "options": {
+                "tabWidth": 2,
+                "useTabs": false
+            }
+        }
+    ]
 }
