@@ -4,6 +4,7 @@ import useIsDesktop from "@/hooks/useIsDesktop";
 import styles from "@/styles/Sidebar.module.css";
 import { getPageTree } from "@/utils/pages";
 import SidebarItem from "./SidebarItem";
+import { useMediaQuery } from "@mui/material";
 
 type SidebarProps = {
     expanded?: boolean;
@@ -18,15 +19,11 @@ export default function Sidebar({
     fragment = false,
     onNavigate,
 }: SidebarProps) {
-    const isDesktop = useIsDesktop();
-
-    if (desktopOnly && !isDesktop) {
-        return <div className="hidden lg:block">&nbsp;</div>;
-    }
+    const isDesktop = useMediaQuery("(min-width: 760px)");
 
     return (
         <>
-            {fragment && <div></div>}
+            {fragment && <div className={desktopOnly ? 'hidden md:block' : ''}></div>}
             <div
                 style={
                     isDesktop
@@ -47,7 +44,7 @@ export default function Sidebar({
                 }
                 className={`${
                     isDesktop ? styles.scrollbarStyles : ""
-                } md:w-[10vw] lg:w-[15vw] xl:w-[20vw]`}
+                } md:w-[25vw] lg:w-[15vw] xl:w-[20vw]`}
             >
                 <ul className="list-none m-3">
                     {getPageTree().children.map(item => (

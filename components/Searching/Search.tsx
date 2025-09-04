@@ -34,7 +34,7 @@ export default function Search() {
 
     return (
         <>
-            <div className="relative">
+            <div className="relative lg:max-w-[300px] justify-self-end">
                 {isDesktop && <SearchInput ref={ref} setQuery={setQuery} />}
 
                 {query && isDesktop && (

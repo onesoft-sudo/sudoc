@@ -8,7 +8,7 @@ import Navigator from "../Navigation/Navigator";
 export default function DocsLayout({ children }: PropsWithChildren) {
     return (
         <div
-            className="grid lg:grid-cols-[3fr_10fr_3.8fr] md:gap-[50px] mb-10 relative"
+            className="grid md:grid-cols-[4fr_8fr_4fr] lg:grid-cols-[3fr_10fr_3.8fr] md:gap-[25px] lg:gap-[50px] mb-10 relative"
             id="docs_layout_root"
         >
             <DocsLinkList desktopOnly fragment />
@@ -29,7 +29,7 @@ export default function DocsLayout({ children }: PropsWithChildren) {
             </div>
 
             <Box
-                className="hidden lg:block mr-5 max-h-[calc(100vh-4rem)] overflow-y-scroll pb-8 relative"
+                className="hidden md:block mr-5 max-h-[calc(100vh-4rem)] overflow-y-scroll pb-8 relative"
                 sx={{
                     scrollbarWidth: 0,
                     "::-webkit-scrollbar": {
