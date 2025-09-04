@@ -43,7 +43,7 @@ export default function Sidebar({
                 }
                 className={`${
                     isDesktop ? styles.scrollbarStyles : ""
-                } md:w-[25vw] lg:w-[15vw] xl:w-[20vw]`}
+                } hidden md:block md:w-[25vw] lg:w-[15vw] xl:w-[20vw]`}
             >
                 <ul className="list-none m-3">
                     {getPageTree().children.map(item => (
