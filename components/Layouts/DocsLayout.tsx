@@ -4,6 +4,7 @@ import PageInfo from "../MDX/PageInfo";
 import TableOfContents from "../MDX/TableOfContents";
 import DocsLinkList from "../Navbar/Sidebar";
 import Navigator from "../Navigation/Navigator";
+import PoweredByFooter from "../Branding/PoweredByFooter";
 
 export default function DocsLayout({ children }: PropsWithChildren) {
     return (
@@ -25,6 +26,10 @@ export default function DocsLayout({ children }: PropsWithChildren) {
                     <Navigator />
                     <hr className="[border-top:1px_solid_#333] mb-5" />
                     <PageInfo />
+                </div>
+                <br />
+                <div className="mx-3 mt-5">
+                    <PoweredByFooter />
                 </div>
             </div>
 
