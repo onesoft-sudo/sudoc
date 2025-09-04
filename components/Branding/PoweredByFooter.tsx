@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { version } from "@/package.json";
+import packageJson from "@/package.json";
 
 const PoweredByFooter: FC = () => {
     return (
@@ -9,7 +9,7 @@ const PoweredByFooter: FC = () => {
                 <a href="https://github.com/onesoft-sudo/sudoc" target="_blank" className="text-blue-500 hover:text-blue-600">
                     Sudoc
                 </a>{" "}
-                v{version}
+                v{packageJson.version}
             </small>
         </div>
     );

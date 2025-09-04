@@ -1,6 +1,11 @@
 import { CircularProgress } from "@heroui/react";
-import { useEffect, useState, type FC } from "react";
-import Link from "../Navigation/Link";
+import {
+    forwardRef,
+    Ref,
+    useEffect,
+    useState,
+} from "react";
+import SearchResult from "./SearchResult";
 
 type SearchResultsProps = {
     query: string;
@@ -14,11 +19,14 @@ type SearchResultItem = {
     href: string;
 };
 
-const SearchResults: FC<SearchResultsProps> = ({ query, onClose }) => {
+const SearchResults = (
+    { query, onClose }: SearchResultsProps,
+    ref: Ref<HTMLDivElement>,
+) => {
     const [results, setResults] = useState<SearchResultItem[] | null>(null);
     const [isLoading, setIsLoading] = useState(false);
     const [isNotFound, setIsNotFound] = useState(false);
-
+   
     const performSearch = async (controller: AbortController) => {
         try {
             const response = await fetch(
@@ -67,7 +75,10 @@ const SearchResults: FC<SearchResultsProps> = ({ query, onClose }) => {
                         onClick={onClose}
                     />
                 ))}
-            <div className="lg:absolute w-full top-12 lg:z-[1000000002] lg:bg-neutral-900 lg:[box-shadow:0_0_3px_0_rgba(255,255,255,0.4)] rounded-lg p-2 lg:max-h-[60vh] lg:overflow-y-scroll">
+            <div
+                ref={ref}
+                className="!outline-none lg:absolute w-full top-12 lg:z-[1000000002] lg:bg-neutral-900 lg:[box-shadow:0_0_3px_0_rgba(255,255,255,0.4)] rounded-lg p-2 lg:max-h-[60vh] lg:overflow-y-scroll"
+            >
                 {isLoading && (
                     <div className="flex items-center gap-2 justify-center">
                         <CircularProgress size={"sm"} />
@@ -81,23 +92,16 @@ const SearchResults: FC<SearchResultsProps> = ({ query, onClose }) => {
                     !isLoading &&
                     !isNotFound &&
                     results.map(result => (
-                        <Link
+                        <SearchResult
                             key={result.href}
-                            href={result.href}
                             onClick={onClose}
-                            className="p-2 hover:bg-neutral-800 rounded-lg cursor-pointer block"
-                        >
-                            <div>{result.title || "Home"}</div>
-
-                            <p className="text-[#999] text-sm">
-                                May include information related to{" "}
-                                <strong className="text-white">{query}</strong>
-                            </p>
-                        </Link>
+                            query={query}
+                            result={result}
+                        />
                     ))}
             </div>
         </>
     );
 };
 
-export default SearchResults;
+export default forwardRef(SearchResults);

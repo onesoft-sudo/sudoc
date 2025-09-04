@@ -3,17 +3,15 @@ import { Button, CircularProgress, TextField } from "@mui/material";
 import { useEffect, useState } from "react";
 import { MdClose } from "react-icons/md";
 import SearchResult from "./SearchResult";
+import { IndexEntry } from "@/types/IndexEntry";
 
 type SearchModalProps = {
     onClose: () => void;
 };
 
-export type SearchResultItem = {
+export type SearchResultItem = Omit<IndexEntry, "contents" | "title"> & {
+    match: keyof IndexEntry;
     title?: string;
-    description?: string;
-    data: string;
-    match: "title" | "description" | "data";
-    url: string;
 };
 
 export default function SearchModal({ onClose }: SearchModalProps) {

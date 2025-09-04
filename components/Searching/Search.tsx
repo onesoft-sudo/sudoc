@@ -11,9 +11,13 @@ import SearchResults from "./SearchResults";
 export default function Search() {
     const platform = usePlatform();
     const isDesktop = useIsDesktop();
-    const ref = useRef<HTMLInputElement>(null);
+    const wrapperRef = useRef<HTMLDivElement>(null);
+    const inputRef = useRef<HTMLInputElement>(null);
+    const searchResultsRef = useRef<HTMLDivElement>(null);
     const [query, setQuery] = useState<string | null>(null);
     const [toggled, setToggled] = useState(false);
+    const [focusJumped, setFocusJumped] = useState(false);
+    const [hideResults, setHideResults] = useState(false);
 
     useEffect(() => {
         const callback = (event: KeyboardEvent) => {
@@ -23,24 +27,48 @@ export default function Search() {
                     event.code === "KeyK")
             ) {
                 event.preventDefault();
-                ref.current?.focus();
+                inputRef.current?.focus();
+                setFocusJumped(true);
             }
         };
 
+        const wrapperRefCallback = (event: KeyboardEvent) => {
+            if (event.code === "Escape") {
+                setHideResults(true);
+            } else if (event.code === "ArrowUp" || event.code === "ArrowDown") {
+                searchResultsRef.current?.focus();
+            }
+        };
+
+        wrapperRef.current?.addEventListener("keydown", wrapperRefCallback);
         window.addEventListener("keydown", callback);
 
-        return () => window.removeEventListener("keydown", callback);
+        return () => {
+            window.removeEventListener("keydown", callback);
+            wrapperRef.current?.removeEventListener("keydown", wrapperRefCallback);
+        };
     }, [platform]);
 
     return (
         <>
-            <div className="relative lg:max-w-[300px] justify-self-end">
-                {isDesktop && <SearchInput ref={ref} setQuery={setQuery} />}
+            <div className="relative lg:max-w-[300px] justify-self-end" ref={wrapperRef}>
+                {isDesktop && (
+                    <SearchInput
+                        ref={inputRef}
+                        setQuery={query => {
+                            setQuery(query);
+                            setHideResults(false);
+                        }}
+                        isFocusJumped={focusJumped}
+                        clearFocusJumped={() => setFocusJumped(false)}
+                    />
+                )}
 
-                {query && isDesktop && (
+                {query && isDesktop && !hideResults && (
                     <SearchResults
                         query={query}
                         onClose={() => setQuery(null)}
+                        ref={searchResultsRef}
                     />
                 )}
 
@@ -64,7 +92,7 @@ export default function Search() {
                             className="overflow-y-scroll bg-neutral-900 w-[calc(100vw-2rem)] h-[calc(80vh-4rem)] mx-[1rem] rounded-lg p-[1rem] absolute bottom-4"
                             onClickCapture={event => event.stopPropagation()}
                         >
-                            <SearchInput ref={ref} setQuery={setQuery} />
+                            <SearchInput ref={inputRef} setQuery={setQuery} />
 
                             {query && (
                                 <SearchResults
