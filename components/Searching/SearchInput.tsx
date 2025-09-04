@@ -1,4 +1,4 @@
-import { forwardRef, Ref, useState } from "react";
+import { forwardRef, Ref } from "react";
 import { MdSearch } from "react-icons/md";
 
 type SearchInputProps = {

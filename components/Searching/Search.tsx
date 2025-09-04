@@ -32,6 +32,8 @@ export default function Search() {
             }
         };
 
+        const wrapper = wrapperRef.current
+
         const wrapperRefCallback = (event: KeyboardEvent) => {
             if (event.code === "Escape") {
                 setHideResults(true);
@@ -40,12 +42,12 @@ export default function Search() {
             }
         };
 
-        wrapperRef.current?.addEventListener("keydown", wrapperRefCallback);
+        wrapper?.addEventListener("keydown", wrapperRefCallback);
         window.addEventListener("keydown", callback);
 
         return () => {
             window.removeEventListener("keydown", callback);
-            wrapperRef.current?.removeEventListener("keydown", wrapperRefCallback);
+            wrapper?.removeEventListener("keydown", wrapperRefCallback);
         };
     }, [platform]);
 

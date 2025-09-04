@@ -1,6 +1,5 @@
 "use client";
 
-import useIsDesktop from "@/hooks/useIsDesktop";
 import styles from "@/styles/Sidebar.module.css";
 import { getPageTree } from "@/utils/pages";
 import SidebarItem from "./SidebarItem";
