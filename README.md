@@ -1,3 +1,3 @@
-# The sudoc projext 
+# The sudoc project 
 
 TODO.
