@@ -2,7 +2,15 @@
 
 ### 04-09-2025 - [[Ar Rakin](mailto:rakinar2@gmail.com)]
 
+  * **fix:** sidebar appearance on mobile
   * **fix:** sidebar overflow on mobile devices
+
+### 04-09-2025 - [[Conventional Release Action](mailto:rakinar2@onesoftnet.eu.org)]
+
+  * **release:** v2.0.1 [skip ci]    
+      
+    **Signed-off-by:**  Conventional Release Action <rakinar2@onesoftnet.eu.org>  
+      
 
 ### 04-09-2025 - [[Ryanmello07](mailto:67509637+Ryanmello07@users.noreply.github.com)]
 
