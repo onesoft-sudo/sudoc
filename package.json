@@ -1,8 +1,14 @@
 {
-  "name": "@onesoftnet/sudobot-docs",
+  "name": "@onesoftnet/sudoc",
   "version": "2.0.0",
   "private": true,
   "type": "module",
+  "description": "A website template / backbone that you can use to scaffold your own project documentation!",
+  "license": "AGPL-3.0-or-later",
+  "author": {
+    "name": "Ar Rakin",
+    "email": "rakinar2@osndevs.org"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "node scripts/genindexes.ts --pre && next build && node scripts/genindexes.ts --post",
