@@ -1,7 +1,7 @@
 <p align="center">
 <a href="#" title="SuDoc" target="_blank">
 <img src="https://raw.githubusercontent.com/onesoft-sudo/sudoc/refs/heads/main/images/sudoc-full.png" height="341px" width="602px">
-</a> 
+</a>
 </p>
 
 <br />
@@ -16,3 +16,23 @@
 <p align="center">
 A free and open source project documentation web app, ready to be deployed anywhere.
 </p>
+
+> [!NOTE]
+> This README file is incomplete. We're trying to finish writing as soon as possible.
+> If you find anything that needs to be changed, feel free to submit your changes.
+
+## How Sudoc is built
+
+Sudoc is a [Next.js](https://nextjs.org) app.  That means, if you have a server where you can run Next.js apps, you can run Sudoc too.
+
+## Licensing
+
+Sudoc is licensed under the [GNU Affero General Public License v3.0](https://gnu.org/licenses/agpl-3.0.html) or later, with one special exception:
+
+The actual information (the "Docs" and/or "Blog posts") being distributed alongside the code of this app is not subject to the AGPL.
+You may choose a completely different license for that.
+
+## Maintainers
+
+* [Ar Rakin](https://github.com/virtual-designer) <rakinar2@osndevs.org>
+* [Ryanmello07](https://github.com/Ryanmello07)
