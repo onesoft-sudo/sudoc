@@ -1,61 +1,69 @@
 "use client";
 
+import { useAppStore } from "@/store/AppStore";
 import styles from "@/styles/Sidebar.module.css";
 import { getPageTree } from "@/utils/pages";
 import { useMediaQuery } from "@mui/material";
+import clsx from "clsx";
 import SidebarItem from "./SidebarItem";
 
 type SidebarProps = {
-    expanded?: boolean;
-    desktopOnly?: boolean;
-    fragment?: boolean;
-    onNavigate?: () => void;
+	expanded?: boolean;
+	desktopOnly?: boolean;
+	fragment?: boolean;
+	onNavigate?: () => void;
 };
 
 export default function Sidebar({
-    expanded,
-    desktopOnly = false,
-    fragment = false,
-    onNavigate,
+	expanded,
+	desktopOnly = false,
+	fragment = false,
+	onNavigate,
 }: SidebarProps) {
-    const isDesktop = useMediaQuery("(min-width: 760px)");
+	const isLargeScreen = useMediaQuery("(min-width: 760px)");
+	const isSidebarExpanded = useAppStore(state => state.isSidebarExpanded);
 
-    return (
-        <>
-            {fragment && <div className={desktopOnly ? 'hidden md:block' : ''}></div>}
-            <div
-                style={
-                    isDesktop
-                        ? {
-                              borderRight: "1px solid #222",
-                              height: "calc(92vh)",
-                              maxHeight: "calc(92vh)",
-                              overflowY: "scroll",
-                              position: "fixed",
-                              left: 0,
-                          }
-                        : {
-                              position: "absolute",
-                              left: !expanded ? "100vh" : 0,
-                              transition: "ease 0.3s",
-                              width: "100%",
-                          }
-                }
-                className={`${
-                    isDesktop ? styles.scrollbarStyles : ""
-                } ${desktopOnly ? "hidden md:block" : ""} md:w-[25vw] lg:w-[20vw] xl:w-[20vw]`}
-            >
-                <ul className="list-none m-3">
-                    {getPageTree().children.map(item => (
-                        <SidebarItem
-                            key={`${item.name}_${item.href}`}
-                            as="li"
-                            item={item}
-                            onNavigate={onNavigate}
-                        />
-                    ))}
-                </ul>
-            </div>
-        </>
-    );
+	return (
+		<>
+			{fragment && (
+				<div
+					className={clsx({
+						"hidden md:block": desktopOnly,
+						"w-0": !isSidebarExpanded,
+					})}
+				></div>
+			)}
+			<div
+				className={clsx(
+					{
+						[styles.scrollbarStyles]: isLargeScreen,
+						"hidden md:block": desktopOnly,
+					},
+					"md:w-[25vw] lg:w-[20vw] xl:w-[20vw]",
+					"max-md:absolute",
+					{
+						"max-md:left-[100vw]": !expanded,
+						"max-md:left-0": expanded,
+					},
+					"[transition:ease_0.3s] max-md:w-full",
+					"md:[border-right:1px_solid_#222] md:h-[92vh] md:max-h-[92vh] md:overflow-y-scroll md:fixed",
+					{
+						"md:left-0": isSidebarExpanded,
+						"md:left-[-30vw]": !isSidebarExpanded,
+					},
+				)}
+			>
+				<ul className="list-none m-3">
+					{getPageTree().children.map(item => (
+						<SidebarItem
+							key={`${item.name}_${item.href}`}
+							as="li"
+							item={item}
+							onNavigate={onNavigate}
+						/>
+					))}
+				</ul>
+			</div>
+		</>
+	);
 }

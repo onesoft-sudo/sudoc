@@ -12,17 +12,17 @@ export default function NavbarClientSide() {
 
     return (
         <>
+            <div className="mobile order-first">
+                <Button
+                    style={{ minWidth: 0, color: "white" }}
+                    onClick={() => setIsOpen(true)}
+                >
+                    <MdMenu size={23} />
+                </Button>
+            </div>
+
             {isMobile && (
                 <>
-                    <div className="mobile order-first">
-                        <Button
-                            style={{ minWidth: 0, color: "white" }}
-                            onClick={() => setIsOpen(true)}
-                        >
-                            <MdMenu size={23} />
-                        </Button>
-                    </div>
-
                     <Drawer isOpen={isOpen} onClose={() => setIsOpen(false)} />
                 </>
             )}

@@ -1,18 +1,16 @@
 import { Box } from "@mui/material";
 import { Fragment, PropsWithChildren } from "react";
+import PoweredByFooter from "../Branding/PoweredByFooter";
 import PageInfo from "../MDX/PageInfo";
 import TableOfContents from "../MDX/TableOfContents";
-import DocsLinkList from "../Navbar/Sidebar";
+import Sidebar from "../Navbar/Sidebar";
 import Navigator from "../Navigation/Navigator";
-import PoweredByFooter from "../Branding/PoweredByFooter";
+import DocsLayoutGrid from "./DocsLayoutGrid";
 
 export default function DocsLayout({ children }: PropsWithChildren) {
     return (
-        <div
-            className="grid md:grid-cols-[4fr_8fr_4fr] lg:grid-cols-[3fr_10fr_3.8fr] md:gap-[25px] lg:gap-[50px] mb-10 relative"
-            id="docs_layout_root"
-        >
-            <DocsLinkList desktopOnly fragment />
+        <DocsLayoutGrid>
+            <Sidebar desktopOnly fragment />
 
             <div className="lg:px-[50px] xl:px-[100px] lg:max-w-[60vw]">
                 <article
@@ -46,6 +44,6 @@ export default function DocsLayout({ children }: PropsWithChildren) {
                     <TableOfContents as={Fragment} />
                 </div>
             </Box>
-        </div>
+        </DocsLayoutGrid>
     );
 }
