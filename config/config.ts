@@ -1,7 +1,7 @@
 /**
  * The brand name to display alongside the logo in the Navbar (mobile).
  */
-export const BRAND_NAME: string = "Your Brand";
+export const BRAND_NAME: string = "Sudoc";
 
 /**
  * The brand name to display alongside the logo, in docs pages.
@@ -21,18 +21,18 @@ export const BRAND_LOGO_IMAGE_FILE_NAME: string = "logo.png";
 /**
  * Site default title.
  */
-export const SITE_DEFAULT_TITLE = "Documentation of this app";
+export const SITE_DEFAULT_TITLE = "Sudoc Documentation";
 
 /**
  * Site title format string.
  */
-export const SITE_TITLE_FORMAT = "%s | Documentation of this app";
+export const SITE_TITLE_FORMAT = `%s | ${SITE_DEFAULT_TITLE}`;
 
 /**
  * The GitHub repository where this website's code is located, in
  * the form of 'username/repository'.
  */
-export const GITHUB_REPOSITORY = "onesoft-sudo/sudobot-docs";
+export const GITHUB_REPOSITORY = "onesoft-sudo/sudoc";
 
 /**
  * The GitHub repository branch name, from which this website is
