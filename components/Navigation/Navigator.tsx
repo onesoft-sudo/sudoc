@@ -3,6 +3,7 @@
 import useActualPathname from "@/hooks/useActualPathname";
 import styles from "@/styles/Navigator.module.css";
 import { flatten, resolveDocsURL } from "@/utils/pages";
+import { getTitle } from "@/utils/utils";
 import Link from "next/link";
 import { FC } from "react";
 import { MdArrowBack, MdArrowForward } from "react-icons/md";
@@ -46,7 +47,7 @@ const Navigator: FC = () => {
                     <div className={styles.text}>
                         <small>Back</small>
                         <span>
-                            {prevPage.data?.short_name ?? prevPage.data?.title ?? prevPage.title}
+                            {prevPage.data?.short_name ?? getTitle(prevPage.data?.title) ?? prevPage.title}
                         </span>
                     </div>
                 </Link>
@@ -59,7 +60,7 @@ const Navigator: FC = () => {
                     <div className={styles.text}>
                         <small>Next</small>
                         <span>
-                            {nextPage.data?.short_name ?? nextPage.data?.title ?? nextPage.title}
+                            {nextPage.data?.short_name ?? getTitle(nextPage.data?.title) ?? nextPage.title}
                         </span>
                     </div>
                     <div className={styles.iconWrapper}>

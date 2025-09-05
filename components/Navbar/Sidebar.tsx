@@ -29,7 +29,7 @@ export default function Sidebar({
 		if (desktopOnly) {
 			setIsSidebarToggleVisible(true)
 		}
-	}, [desktopOnly])
+	}, [desktopOnly, setIsSidebarToggleVisible]);
 
 	return (
 		<>

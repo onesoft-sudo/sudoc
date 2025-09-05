@@ -3,8 +3,9 @@ import useActualPathname from "@/hooks/useActualPathname";
 import styles from "@/styles/SidebarItem.module.css";
 import { Page } from "@/types/Tree";
 import { flatten, resolveDocsURL } from "@/utils/pages";
+import { getTitle } from "@/utils/utils";
 import { Button } from "@mui/material";
-import { SyntheticEvent, useEffect, useMemo, useState, JSX } from "react";
+import { JSX, SyntheticEvent, useEffect, useMemo, useState } from "react";
 import { MdExpandMore } from "react-icons/md";
 
 type SidebarItemProps = {
@@ -54,7 +55,7 @@ export default function SidebarItem({
     const link = url ? resolveDocsURL(url) : "#";
     const LinkComponent = url ? Link : "a";
     const IconWrapperComponent = url === undefined ? "span" : Button;
-    const name = item.data?.short_name ?? item.data?.title ?? item.title;
+    const name = item.data?.short_name ?? getTitle(item.data?.title) ?? item.title;
 
     return (
         <Root

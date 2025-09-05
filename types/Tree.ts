@@ -7,7 +7,11 @@ export type Page = {
     type?: "directory" | "page";
     data?: {
         short_name?: string;
-        title?: string;
+        title?: string | {
+            absolute?: string;
+            template?: string;
+            default?: string;
+        };
     };
 };
 
