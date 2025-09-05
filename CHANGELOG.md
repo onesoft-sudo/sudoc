@@ -1,15 +1,18 @@
 # Changelog
 
-### 04-09-2025 - [[Ar Rakin](mailto:rakinar2@gmail.com)]
+### 05-09-2025 - [[Ar Rakin](mailto:rakinar2@osndevs.org)]
 
-  * **fix:** sidebar appearance on mobile
-  * **fix:** sidebar overflow on mobile devices
-
-### 04-09-2025 - [[Conventional Release Action](mailto:rakinar2@onesoftnet.eu.org)]
-
-  * **release:** v2.0.1 [skip ci]    
+  * **feat:** collapsible sidebar    
       
-    **Signed-off-by:**  Conventional Release Action <rakinar2@onesoftnet.eu.org>  
+    **Signed-off-by:**  Ar Rakin <rakinar2@osndevs.org>  
+      
+  * **feat:** new logo    
+      
+    **Signed-off-by:**  Ar Rakin <rakinar2@osndevs.org>  
+      
+  * **fix:** sidebar width    
+      
+    **Signed-off-by:**  Ar Rakin <rakinar2@osndevs.org>  
       
 
 ### 04-09-2025 - [[Ryanmello07](mailto:67509637+Ryanmello07@users.noreply.github.com)]
@@ -17,6 +20,27 @@
   * Update page.mdx    
       
     **Signed-off-by:**  Ryanmello07 <67509637+Ryanmello07@users.noreply.github.com>  
+  * Update page.mdx with advanced MDX features
+  * Update page.mdx with new content
+  * Update page.mdx    
+      
+    **Signed-off-by:**  Ryanmello07 <67509637+Ryanmello07@users.noreply.github.com>  
+
+### 04-09-2025 - [[Conventional Release Action](mailto:rakinar2@onesoftnet.eu.org)]
+
+  * **release:** v2.0.2 [skip ci]    
+      
+    **Signed-off-by:**  Conventional Release Action <rakinar2@onesoftnet.eu.org>  
+      
+  * **release:** v2.0.1 [skip ci]    
+      
+    **Signed-off-by:**  Conventional Release Action <rakinar2@onesoftnet.eu.org>  
+      
+
+### 04-09-2025 - [[Ar Rakin](mailto:rakinar2@gmail.com)]
+
+  * **fix:** sidebar appearance on mobile
+  * **fix:** sidebar overflow on mobile devices
 
 ### 04-09-2025 - [[Ar Rakin](mailto:rakinar2@onesoftnet.eu.org)]
 
