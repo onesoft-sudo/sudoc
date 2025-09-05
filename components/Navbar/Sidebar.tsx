@@ -5,6 +5,7 @@ import styles from "@/styles/Sidebar.module.css";
 import { getPageTree } from "@/utils/pages";
 import { useMediaQuery } from "@mui/material";
 import clsx from "clsx";
+import { useEffect } from "react";
 import SidebarItem from "./SidebarItem";
 
 type SidebarProps = {
@@ -22,6 +23,13 @@ export default function Sidebar({
 }: SidebarProps) {
 	const isLargeScreen = useMediaQuery("(min-width: 760px)");
 	const isSidebarExpanded = useAppStore(state => state.isSidebarExpanded);
+	const setIsSidebarToggleVisible = useAppStore(state => state.setIsSidebarToggleVisible);
+
+	useEffect(() => {
+		if (desktopOnly) {
+			setIsSidebarToggleVisible(true)
+		}
+	}, [desktopOnly])
 
 	return (
 		<>

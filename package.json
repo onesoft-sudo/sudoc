@@ -11,7 +11,7 @@
     },
     "scripts": {
         "dev": "next dev",
-        "build": "node scripts/genindexes.ts --pre && next build && node scripts/genindexes.ts --post",
+        "build": "node scripts/init.ts && node scripts/genindexes.ts --pre && next build && node scripts/genindexes.ts --post",
         "start": "next start",
         "lint": "eslint"
     },

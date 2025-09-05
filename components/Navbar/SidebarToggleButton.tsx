@@ -7,7 +7,12 @@ import { MdMenu, MdMenuOpen } from "react-icons/md";
 
 const SidebarToggleButton: FC = () => {
 	const isSidebarExpanded = useAppStore(state => state.isSidebarExpanded);
+	const isSidebarToggleVisible = useAppStore(state => state.isSidebarToggleVisible);
 	const toggleIsSidebarExpanded = useAppStore(state => state.toggleIsSidebarExpanded);
+
+	if (!isSidebarToggleVisible) {
+		return null;
+	}
 
 	return (
 		<Button

@@ -12,6 +12,10 @@ const flatRoutes = flatten().filter(page => page.type !== "directory");
 const Navigator: FC = () => {
     const pathname = useActualPathname();
 
+    if (flatRoutes.length === 0) {
+        return null;
+    }
+
     const currentPage = flatRoutes.findIndex(page => {
         if (!page.href) {
             return false;
