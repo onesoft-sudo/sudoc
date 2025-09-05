@@ -2,8 +2,8 @@
 
 import styles from "@/styles/Sidebar.module.css";
 import { getPageTree } from "@/utils/pages";
-import SidebarItem from "./SidebarItem";
 import { useMediaQuery } from "@mui/material";
+import SidebarItem from "./SidebarItem";
 
 type SidebarProps = {
     expanded?: boolean;
@@ -43,7 +43,7 @@ export default function Sidebar({
                 }
                 className={`${
                     isDesktop ? styles.scrollbarStyles : ""
-                } ${desktopOnly ? "hidden md:block" : ""} md:w-[25vw] lg:w-[15vw] xl:w-[20vw]`}
+                } ${desktopOnly ? "hidden md:block" : ""} md:w-[25vw] lg:w-[20vw] xl:w-[20vw]`}
             >
                 <ul className="list-none m-3">
                     {getPageTree().children.map(item => (
