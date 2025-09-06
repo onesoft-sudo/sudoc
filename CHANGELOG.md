@@ -2,6 +2,11 @@
 
 ### 05-09-2025 - [[Ar Rakin](mailto:rakinar2@osndevs.org)]
 
+  * merge: branch 'main' of github.com:onesoft-sudo/sudoc
+  * **fix:** type errors    
+      
+    **Signed-off-by:**  Ar Rakin <rakinar2@osndevs.org>  
+      
   * merge: branch 'main' of github.com:onesoft-sudo/sudoc    
       
     **Signed-off-by:**  Ar Rakin <rakinar2@osndevs.org>  
@@ -29,6 +34,10 @@
 
 ### 05-09-2025 - [[Conventional Release Action](mailto:rakinar2@onesoftnet.eu.org)]
 
+  * **release:** v2.2.2 [skip ci]    
+      
+    **Signed-off-by:**  Conventional Release Action <rakinar2@onesoftnet.eu.org>  
+      
   * **release:** v2.2.1 [skip ci]    
       
     **Signed-off-by:**  Conventional Release Action <rakinar2@onesoftnet.eu.org>  
