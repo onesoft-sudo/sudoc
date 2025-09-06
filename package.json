@@ -38,6 +38,7 @@
         "remark-frontmatter": "^5.0.0",
         "remark-gfm": "^4.0.1",
         "remark-mdx-frontmatter": "^5.2.0",
+        "shiki": "^3.12.2",
         "zustand": "^5.0.8"
     },
     "devDependencies": {
