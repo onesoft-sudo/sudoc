@@ -84,7 +84,15 @@ although we would not recommend doing that.
 
 If you're developing or writing documentation pages on your local machine, the dev server might be helpful for you.
 The dev server features hot reloading, strict mode, friendly error messages and a lot of other things that are very helpful during development.
-To start it, run the following:
+
+Before you start the dev server, you should keep in mind that when you build the app for production, the sitemaps, indexes and trees are automatically generated for you.
+But in dev mode, you must generate them manually. To do so, run:
+
+```bash
+node scripts/genindexes.ts --pre --post
+```
+
+To start the dev server, run the following:
 
 ```bash
 pnpm run dev
