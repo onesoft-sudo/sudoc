@@ -1,5 +1,23 @@
 # Changelog
 
+### 13-09-2025 - [[Ar Rakin](mailto:rakinar2@osndevs.org)]
+
+  * **feat:** table of contents on mobile    
+      
+    **Signed-off-by:**  Ar Rakin <rakinar2@osndevs.org>  
+      
+  * **docs:** update getting started guide to include index update instructions    
+      
+    **Signed-off-by:**  Ar Rakin <rakinar2@osndevs.org>  
+      
+
+### 06-09-2025 - [[Conventional Release Action](mailto:rakinar2@onesoftnet.eu.org)]
+
+  * **release:** v2.3.0 [skip ci]    
+      
+    **Signed-off-by:**  Conventional Release Action <rakinar2@onesoftnet.eu.org>  
+      
+
 ### 06-09-2025 - [[Ar Rakin](mailto:rakinar2@osndevs.org)]
 
   * merge: branch 'main' of github.com:onesoft-sudo/sudoc    
