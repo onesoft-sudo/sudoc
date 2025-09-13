@@ -1,9 +1,9 @@
 "use client";
 
+import { useIsLargeScreen } from "@/hooks/useIsLargeScreen";
 import { useAppStore } from "@/store/AppStore";
 import styles from "@/styles/Sidebar.module.css";
 import { getPageTree } from "@/utils/pages";
-import { useMediaQuery } from "@mui/material";
 import clsx from "clsx";
 import { useEffect } from "react";
 import SidebarItem from "./SidebarItem";
@@ -21,7 +21,7 @@ export default function Sidebar({
 	fragment = false,
 	onNavigate,
 }: SidebarProps) {
-	const isLargeScreen = useMediaQuery("(min-width: 760px)");
+	const isLargeScreen = useIsLargeScreen();
 	const isSidebarExpanded = useAppStore(state => state.isSidebarExpanded);
 	const setIsSidebarToggleVisible = useAppStore(state => state.setIsSidebarToggleVisible);
 

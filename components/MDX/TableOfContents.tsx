@@ -1,21 +1,26 @@
 "use client";
 
 import useActualPathname from "@/hooks/useActualPathname";
+import { useIsLargeScreen } from "@/hooks/useIsLargeScreen";
 import {
-    FC,
-    JSX,
-    useEffect,
-    useRef,
-    useState
+	FC,
+	JSX,
+	useEffect,
+	useRef,
+	useState
 } from "react";
 
 const selector = ":is(h1, h2, h3, h4, h5, h6)[id]";
 
+export type TableOfContentsProps = {
+	as?: keyof JSX.IntrinsicElements | FC;
+	mobileMode?: boolean;
+}
+
 export default function TableOfContents({
 	as,
-}: {
-	as?: keyof JSX.IntrinsicElements | FC;
-}) {
+	mobileMode = false,
+}: TableOfContentsProps) {
 	const [headings, setHeadings] = useState<
 		{
 			id: string;
@@ -26,8 +31,14 @@ export default function TableOfContents({
 	const [activeId, setActiveId] = useState("");
 	const Root = as ?? "div";
 	const pathname = useActualPathname();
+	const isLargeScreen = useIsLargeScreen();
+	const isHidden = ((!mobileMode && !isLargeScreen) || (mobileMode && isLargeScreen));
 
 	useEffect(() => {
+		if (isHidden) {
+			return;
+		}
+
 		const headingElements = Array.from(
 			document.querySelectorAll(selector) as Iterable<HTMLElement>,
 		);
@@ -46,9 +57,13 @@ export default function TableOfContents({
 
 		setHeadings(headings);
 		setActiveId(headings[0].id);
-	}, [pathname]);
+	}, [pathname, isHidden]);
 
 	useEffect(() => {
+		if (isHidden) {
+			return;
+		}
+
 		observer.current = new IntersectionObserver(
 			entries => {
 				for (const entry of entries) {
@@ -69,15 +84,19 @@ export default function TableOfContents({
 			observer.current?.disconnect();
 			setActiveId("");
 		};
-	}, [pathname]);
+	}, [pathname, isHidden]);
 
 	const onlyOne = headings.length === 1;
 
+	if (isHidden) {
+		return null;
+	}
+
 	return (
 		<Root>
-			<h4 className="pl-[15px] mb-3 mt-4 uppercase font-bold tracking-wider text-[15px]">
+			{!mobileMode && <h4 className="pl-[15px] mb-3 mt-4 uppercase font-bold tracking-wider text-[15px]">
 				On this page
-			</h4>
+			</h4>}
 			<ul className="list-none pr-2.5">
 				{headings.map(heading => (
 					<li key={heading.id}>
