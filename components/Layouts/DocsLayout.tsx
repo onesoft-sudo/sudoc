@@ -5,6 +5,7 @@ import MobileTableOfContentsWrapper from "../MDX/MobileTableOfContentsWrapper";
 import PageInfo from "../MDX/PageInfo";
 import ShowTableOfContentsToggle from "../MDX/ShowTableOfContentsToggle";
 import TableOfContents from "../MDX/TableOfContents";
+import TreeBreadcrumbNavigation from "../MDX/TreeBreadcrumbNavigation";
 import Sidebar from "../Navbar/Sidebar";
 import Navigator from "../Navigation/Navigator";
 import DocsLayoutGrid from "./DocsLayoutGrid";
@@ -16,6 +17,10 @@ export default function DocsLayout({ children }: PropsWithChildren) {
 
 			<div className="lg:px-[50px] xl:px-[100px] lg:max-w-[60vw]">
 				<MobileTableOfContentsWrapper />
+
+				<div className="m-3">
+					<TreeBreadcrumbNavigation />
+				</div>
 
 				<article
 					id="article"
@@ -32,7 +37,7 @@ export default function DocsLayout({ children }: PropsWithChildren) {
 				<br />
 				<div className="mx-3 mt-5">
 					<PoweredByFooter />
-                    <ShowTableOfContentsToggle />
+					<ShowTableOfContentsToggle />
 				</div>
 			</div>
 
