@@ -1,5 +1,18 @@
 # Changelog
 
+### 28-09-2025 - [[Ar Rakin](mailto:rakinar2@onesoftnet.eu.org)]
+
+  * **fix:** change default TOC visibility on mobile to hidden    
+      
+    **Signed-off-by:**  Ar Rakin <rakinar2@onesoftnet.eu.org>  
+
+### 14-09-2025 - [[Conventional Release Action](mailto:rakinar2@onesoftnet.eu.org)]
+
+  * **release:** v2.5.0 [skip ci]    
+      
+    **Signed-off-by:**  Conventional Release Action <rakinar2@onesoftnet.eu.org>  
+      
+
 ### 14-09-2025 - [[Ar Rakin](mailto:rakinar2@osndevs.org)]
 
   * **feat:** navigation tree breadcrumb for docs pages    
