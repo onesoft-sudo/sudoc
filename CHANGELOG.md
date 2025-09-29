@@ -2,6 +2,15 @@
 
 ### 29-09-2025 - [[Ar Rakin](mailto:rakinar2@osndevs.org)]
 
+  * **fix:** spacing for sidebar items    
+      
+    **Signed-off-by:**  Ar Rakin <rakinar2@osndevs.org>  
+      
+  * merge: branch 'main' of github.com:onesoft-sudo/sudoc
+  * **chore:** add patchtool    
+      
+    **Signed-off-by:**  Ar Rakin <rakinar2@osndevs.org>  
+      
   * **fix:** initial nesting margin    
       
     **Signed-off-by:**  Ar Rakin <rakinar2@osndevs.org>  
@@ -28,6 +37,10 @@
 
 ### 29-09-2025 - [[Conventional Release Action](mailto:rakinar2@onesoftnet.eu.org)]
 
+  * **release:** v2.7.4 [skip ci]    
+      
+    **Signed-off-by:**  Conventional Release Action <rakinar2@onesoftnet.eu.org>  
+      
   * **release:** v2.7.3 [skip ci]    
       
     **Signed-off-by:**  Conventional Release Action <rakinar2@onesoftnet.eu.org>  
