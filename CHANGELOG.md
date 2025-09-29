@@ -2,6 +2,7 @@
 
 ### 29-09-2025 - [[Ar Rakin](mailto:rakinar2@osndevs.org)]
 
+  * **fix:** add left margin to rootNested class
   * merge: branch 'main' of github.com:onesoft-sudo/sudoc
   * **fix:** correct margin based on expanded state    
       
@@ -23,6 +24,10 @@
 
 ### 29-09-2025 - [[Conventional Release Action](mailto:rakinar2@onesoftnet.eu.org)]
 
+  * **release:** v2.7.2 [skip ci]    
+      
+    **Signed-off-by:**  Conventional Release Action <rakinar2@onesoftnet.eu.org>  
+      
   * **release:** v2.7.1 [skip ci]    
       
     **Signed-off-by:**  Conventional Release Action <rakinar2@onesoftnet.eu.org>  
