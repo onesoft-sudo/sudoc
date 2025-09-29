@@ -1,5 +1,27 @@
 # Changelog
 
+### 29-09-2025 - [[Ar Rakin](mailto:rakinar2@osndevs.org)]
+
+  * **fix:** incorrect page and directory handling    
+      
+    **Signed-off-by:**  Ar Rakin <rakinar2@osndevs.org>  
+      
+
+### 28-09-2025 - [[Conventional Release Action](mailto:rakinar2@onesoftnet.eu.org)]
+
+  * **release:** v2.6.1 [skip ci]    
+      
+    **Signed-off-by:**  Conventional Release Action <rakinar2@onesoftnet.eu.org>  
+      
+  * **release:** v2.5.2 [skip ci]    
+      
+    **Signed-off-by:**  Conventional Release Action <rakinar2@onesoftnet.eu.org>  
+      
+  * **release:** v2.5.1 [skip ci]    
+      
+    **Signed-off-by:**  Conventional Release Action <rakinar2@onesoftnet.eu.org>  
+      
+
 ### 28-09-2025 - [[Ar Rakin](mailto:rakinar2@osndevs.org)]
 
   * **feat:** add code block copy button    
@@ -9,17 +31,6 @@
   * **fix:** padding and margin of children inside callout    
       
     **Signed-off-by:**  Ar Rakin <rakinar2@osndevs.org>  
-      
-
-### 28-09-2025 - [[Conventional Release Action](mailto:rakinar2@onesoftnet.eu.org)]
-
-  * **release:** v2.5.2 [skip ci]    
-      
-    **Signed-off-by:**  Conventional Release Action <rakinar2@onesoftnet.eu.org>  
-      
-  * **release:** v2.5.1 [skip ci]    
-      
-    **Signed-off-by:**  Conventional Release Action <rakinar2@onesoftnet.eu.org>  
       
 
 ### 28-09-2025 - [[Ar Rakin](mailto:rakinar2@onesoftnet.eu.org)]
