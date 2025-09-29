@@ -1,16 +1,22 @@
 # Changelog
 
-### 29-09-2025 - [[Ar Rakin](mailto:rakinar2@onesoftnet.eu.org)]
+### 29-09-2025 - [[Ar Rakin](mailto:rakinar2@osndevs.org)]
 
-  * **fix:** make root page an actual "page" in the tree    
+  * **feat:** add a marker before nested pages in sidebar    
       
-    **Signed-off-by:**  Ar Rakin <rakinar2@onesoftnet.eu.org>  
-  * **fix:** change cursor style based on pathEntry type    
+    **Signed-off-by:**  Ar Rakin <rakinar2@osndevs.org>  
       
-    **Signed-off-by:**  Ar Rakin <rakinar2@onesoftnet.eu.org>  
+  * **fix:** incorrect page and directory handling    
+      
+    **Signed-off-by:**  Ar Rakin <rakinar2@osndevs.org>  
+      
 
 ### 29-09-2025 - [[Conventional Release Action](mailto:rakinar2@onesoftnet.eu.org)]
 
+  * **release:** v2.6.4 [skip ci]    
+      
+    **Signed-off-by:**  Conventional Release Action <rakinar2@onesoftnet.eu.org>  
+      
   * **release:** v2.6.3 [skip ci]    
       
     **Signed-off-by:**  Conventional Release Action <rakinar2@onesoftnet.eu.org>  
@@ -20,12 +26,14 @@
     **Signed-off-by:**  Conventional Release Action <rakinar2@onesoftnet.eu.org>  
       
 
-### 29-09-2025 - [[Ar Rakin](mailto:rakinar2@osndevs.org)]
+### 29-09-2025 - [[Ar Rakin](mailto:rakinar2@onesoftnet.eu.org)]
 
-  * **fix:** incorrect page and directory handling    
+  * **fix:** make root page an actual "page" in the tree    
       
-    **Signed-off-by:**  Ar Rakin <rakinar2@osndevs.org>  
+    **Signed-off-by:**  Ar Rakin <rakinar2@onesoftnet.eu.org>  
+  * **fix:** change cursor style based on pathEntry type    
       
+    **Signed-off-by:**  Ar Rakin <rakinar2@onesoftnet.eu.org>  
 
 ### 28-09-2025 - [[Conventional Release Action](mailto:rakinar2@onesoftnet.eu.org)]
 
