@@ -2,6 +2,14 @@
 
 ### 30-09-2025 - [[Ar Rakin](mailto:rakinar2@osndevs.org)]
 
+  * **fix:** clicking on mobile TOC links should not collapse it    
+      
+    **Signed-off-by:**  Ar Rakin <rakinar2@osndevs.org>  
+      
+  * maint: update .patchignore    
+      
+    **Signed-off-by:**  Ar Rakin <rakinar2@osndevs.org>  
+      
   * **fix:** eslint errors    
       
     **Signed-off-by:**  Ar Rakin <rakinar2@osndevs.org>  
@@ -38,6 +46,10 @@
 
 ### 30-09-2025 - [[Conventional Release Action](mailto:rakinar2@onesoftnet.eu.org)]
 
+  * **release:** v2.10.3 [skip ci]    
+      
+    **Signed-off-by:**  Conventional Release Action <rakinar2@onesoftnet.eu.org>  
+      
   * **release:** v2.10.2 [skip ci]    
       
     **Signed-off-by:**  Conventional Release Action <rakinar2@onesoftnet.eu.org>  
