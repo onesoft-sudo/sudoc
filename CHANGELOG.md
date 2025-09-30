@@ -2,6 +2,19 @@
 
 ### 30-09-2025 - [[Ar Rakin](mailto:rakinar2@osndevs.org)]
 
+  * **fix:** eslint errors    
+      
+    **Signed-off-by:**  Ar Rakin <rakinar2@osndevs.org>  
+      
+  * maint: update patchtool    
+      
+    **Signed-off-by:**  Ar Rakin <rakinar2@osndevs.org>  
+      
+  * merge: branch 'main' of github.com:onesoft-sudo/sudoc
+  * maint: update patchtool    
+      
+    **Signed-off-by:**  Ar Rakin <rakinar2@osndevs.org>  
+      
   * **feat:** blur effects on desktop search results    
       
     **Signed-off-by:**  Ar Rakin <rakinar2@osndevs.org>  
@@ -21,6 +34,13 @@
   * **fix:** sidebar vertical guide helper    
       
     **Signed-off-by:**  Ar Rakin <rakinar2@osndevs.org>  
+      
+
+### 30-09-2025 - [[Conventional Release Action](mailto:rakinar2@onesoftnet.eu.org)]
+
+  * **release:** v2.10.2 [skip ci]    
+      
+    **Signed-off-by:**  Conventional Release Action <rakinar2@onesoftnet.eu.org>  
       
 
 ### 29-09-2025 - [[Ar Rakin](mailto:rakinar2@osndevs.org)]
