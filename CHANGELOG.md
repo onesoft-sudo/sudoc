@@ -1,7 +1,43 @@
 # Changelog
 
+### 30-09-2025 - [[Ar Rakin](mailto:rakinar2@osndevs.org)]
+
+  * **feat:** blur effects on desktop search results    
+      
+    **Signed-off-by:**  Ar Rakin <rakinar2@osndevs.org>  
+      
+  * **feat:** add blur effects to mobile search view    
+      
+    **Signed-off-by:**  Ar Rakin <rakinar2@osndevs.org>  
+      
+  * **feat:** ensure the mobile TOC is clickable    
+      
+    **Signed-off-by:**  Ar Rakin <rakinar2@osndevs.org>  
+      
+  * **fix:** thin scrollbar on code blocks    
+      
+    **Signed-off-by:**  Ar Rakin <rakinar2@osndevs.org>  
+      
+  * **fix:** sidebar vertical guide helper    
+      
+    **Signed-off-by:**  Ar Rakin <rakinar2@osndevs.org>  
+      
+
 ### 29-09-2025 - [[Ar Rakin](mailto:rakinar2@osndevs.org)]
 
+  * maint(patchtool): --help option    
+      
+    **Signed-off-by:**  Ar Rakin <rakinar2@osndevs.org>  
+      
+  * maint(patchtool): detect empty responses    
+      
+    **Signed-off-by:**  Ar Rakin <rakinar2@osndevs.org>  
+      
+  * merge: branch 'main' of github.com:onesoft-sudo/sudoc
+  * maint: add patchtool script    
+      
+    **Signed-off-by:**  Ar Rakin <rakinar2@osndevs.org>  
+      
   * **fix:** spacing for sidebar items    
       
     **Signed-off-by:**  Ar Rakin <rakinar2@osndevs.org>  
@@ -37,6 +73,14 @@
 
 ### 29-09-2025 - [[Conventional Release Action](mailto:rakinar2@onesoftnet.eu.org)]
 
+  * **release:** v2.7.5 [skip ci]    
+      
+    **Signed-off-by:**  Conventional Release Action <rakinar2@onesoftnet.eu.org>  
+      
+  * **release:** v2.7.5 [skip ci]    
+      
+    **Signed-off-by:**  Conventional Release Action <rakinar2@onesoftnet.eu.org>  
+      
   * **release:** v2.7.4 [skip ci]    
       
     **Signed-off-by:**  Conventional Release Action <rakinar2@onesoftnet.eu.org>  
