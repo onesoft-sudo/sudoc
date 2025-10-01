@@ -2,6 +2,11 @@
 
 ### 01-10-2025 - [[Ar Rakin](mailto:rakinar2@osndevs.org)]
 
+  * merge: branch 'main' of github.com:onesoft-sudo/sudoc
+  * **feat:** add class to navbar    
+      
+    **Signed-off-by:**  Ar Rakin <rakinar2@osndevs.org>  
+      
   * **feat:** add classes to notable elements    
       
     **Signed-off-by:**  Ar Rakin <rakinar2@osndevs.org>  
@@ -18,6 +23,10 @@
 
 ### 01-10-2025 - [[Conventional Release Action](mailto:rakinar2@onesoftnet.eu.org)]
 
+  * **release:** v2.11.0 [skip ci]    
+      
+    **Signed-off-by:**  Conventional Release Action <rakinar2@onesoftnet.eu.org>  
+      
   * **release:** v2.10.7 [skip ci]    
       
     **Signed-off-by:**  Conventional Release Action <rakinar2@onesoftnet.eu.org>  
