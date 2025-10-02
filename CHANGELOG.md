@@ -1,5 +1,27 @@
 # Changelog
 
+### 02-10-2025 - [[Ar Rakin](mailto:rakinar2@osndevs.org)]
+
+  * **feat:** floating search bar on mobile    
+      
+    **Signed-off-by:**  Ar Rakin <rakinar2@osndevs.org>  
+      
+
+### 01-10-2025 - [[Conventional Release Action](mailto:rakinar2@onesoftnet.eu.org)]
+
+  * **release:** v2.12.0 [skip ci]    
+      
+    **Signed-off-by:**  Conventional Release Action <rakinar2@onesoftnet.eu.org>  
+      
+  * **release:** v2.11.0 [skip ci]    
+      
+    **Signed-off-by:**  Conventional Release Action <rakinar2@onesoftnet.eu.org>  
+      
+  * **release:** v2.10.7 [skip ci]    
+      
+    **Signed-off-by:**  Conventional Release Action <rakinar2@onesoftnet.eu.org>  
+      
+
 ### 01-10-2025 - [[Ar Rakin](mailto:rakinar2@osndevs.org)]
 
   * merge: branch 'main' of github.com:onesoft-sudo/sudoc
@@ -19,17 +41,6 @@
   * **fix:** sidebar active indicator    
       
     **Signed-off-by:**  Ar Rakin <rakinar2@osndevs.org>  
-      
-
-### 01-10-2025 - [[Conventional Release Action](mailto:rakinar2@onesoftnet.eu.org)]
-
-  * **release:** v2.11.0 [skip ci]    
-      
-    **Signed-off-by:**  Conventional Release Action <rakinar2@onesoftnet.eu.org>  
-      
-  * **release:** v2.10.7 [skip ci]    
-      
-    **Signed-off-by:**  Conventional Release Action <rakinar2@onesoftnet.eu.org>  
       
 
 ### 30-09-2025 - [[Conventional Release Action](mailto:rakinar2@onesoftnet.eu.org)]
