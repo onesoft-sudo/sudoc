@@ -3,6 +3,11 @@
 ### 02-10-2025 - [[Ar Rakin](mailto:rakinar2@osndevs.org)]
 
   * merge: branch 'main' of github.com:onesoft-sudo/sudoc
+  * **feat:** better edit button with more options    
+      
+    **Signed-off-by:**  Ar Rakin <rakinar2@osndevs.org>  
+      
+  * merge: branch 'main' of github.com:onesoft-sudo/sudoc
   * **feat:** more smooth transitions and hover effects    
       
     **Signed-off-by:**  Ar Rakin <rakinar2@osndevs.org>  
@@ -14,6 +19,10 @@
 
 ### 02-10-2025 - [[Conventional Release Action](mailto:rakinar2@onesoftnet.eu.org)]
 
+  * **release:** v2.14.0 [skip ci]    
+      
+    **Signed-off-by:**  Conventional Release Action <rakinar2@onesoftnet.eu.org>  
+      
   * **release:** v2.13.0 [skip ci]    
       
     **Signed-off-by:**  Conventional Release Action <rakinar2@onesoftnet.eu.org>  
