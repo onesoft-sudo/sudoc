@@ -2,6 +2,10 @@
 
 ### 02-10-2025 - [[Ar Rakin](mailto:rakinar2@osndevs.org)]
 
+  * **feat:** classes for dropdown elements    
+      
+    **Signed-off-by:**  Ar Rakin <rakinar2@osndevs.org>  
+      
   * merge: branch 'main' of github.com:onesoft-sudo/sudoc
   * **feat:** add a class to edit page button wrapper    
       
@@ -29,6 +33,10 @@
 
 ### 02-10-2025 - [[Conventional Release Action](mailto:rakinar2@onesoftnet.eu.org)]
 
+  * **release:** v2.17.0 [skip ci]    
+      
+    **Signed-off-by:**  Conventional Release Action <rakinar2@onesoftnet.eu.org>  
+      
   * **release:** v2.16.0 [skip ci]    
       
     **Signed-off-by:**  Conventional Release Action <rakinar2@onesoftnet.eu.org>  
