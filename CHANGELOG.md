@@ -2,9 +2,25 @@
 
 ### 03-10-2025 - [[Ar Rakin](mailto:rakinar2@osndevs.org)]
 
+  * merge: branch 'main' of github.com:onesoft-sudo/sudoc
+  * **fix:** edit button options    
+      
+    **Signed-off-by:**  Ar Rakin <rakinar2@osndevs.org>  
+      
+  * **feat:** footnotes and citations    
+      
+    **Signed-off-by:**  Ar Rakin <rakinar2@osndevs.org>  
+      
   * **fix:** floating search results height    
       
     **Signed-off-by:**  Ar Rakin <rakinar2@osndevs.org>  
+      
+
+### 03-10-2025 - [[Conventional Release Action](mailto:rakinar2@onesoftnet.eu.org)]
+
+  * **release:** v2.19.1 [skip ci]    
+      
+    **Signed-off-by:**  Conventional Release Action <rakinar2@onesoftnet.eu.org>  
       
 
 ### 02-10-2025 - [[Conventional Release Action](mailto:rakinar2@onesoftnet.eu.org)]
