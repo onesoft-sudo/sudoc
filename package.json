@@ -1,6 +1,6 @@
 {
     "name": "@onesoftnet/sudoc",
-    "version": "2.19.0",
+    "version": "2.19.1",
     "private": true,
     "type": "module",
     "description": "A website template / backbone that you can use to scaffold your own project documentation!",
